@@ -1,0 +1,25 @@
+= SUNova
+Michael D Henderson <mdhender@mdhender.com>
+v0.1, 2021-05-28
+:doctype: book
+:sectnums:
+:sectnumlevels: 5
+:partnums:
+:toc: right
+
+:sectnums!:
+== Foreword
+
+----
+Copyright (c) 2021 by Michael D Henderson.
+All rights reserved.
+----
+
+:sectnums:
+== Introduction
+
+SUNova is my player aid for a game.
+
+
+[index]
+== Index
