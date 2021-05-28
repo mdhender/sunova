@@ -25,6 +25,7 @@ import (
 	"github.com/peterbourgon/ff/v3"
 	"os"
 	"path"
+	"path/filepath"
 	"time"
 )
 
@@ -69,7 +70,7 @@ func DefaultConfig() *Config {
 	var cfg Config
 	cfg.App.Root = "D:/GoLand/sunova"
 	cfg.App.TimestampFormat = "2006-01-02T15:04:05.99999999Z"
-	cfg.Data.Path = cfg.App.Root + "testdata/"
+	cfg.Data.Path = filepath.Join(cfg.App.Root, "testdata")
 	cfg.Server.Scheme = "http"
 	cfg.Server.Host = "localhost"
 	cfg.Server.Port = "3000"
@@ -79,7 +80,7 @@ func DefaultConfig() *Config {
 	cfg.Server.Timeout.Write = 10 * time.Second
 	cfg.Server.Key = "curry.aka.yrruc"
 	cfg.Server.Salt = "pepper"
-	cfg.Server.WebRoot = cfg.App.Root + "web/"
+	cfg.Server.WebRoot = filepath.Join(cfg.App.Root, "web")
 	return &cfg
 }
 

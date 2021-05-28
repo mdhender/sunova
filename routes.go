@@ -19,10 +19,13 @@
 
 package main
 
-import "net/http"
+import (
+	"github.com/mdhender/sunova/handlers"
+	"net/http"
+)
 
 // Routes initializes all routes exposed by the Server.
-func (s *Server) Routes() {
+func (s *Server) Routes(cfg *Config) {
 	for _, route := range []struct {
 		pattern string
 		method  string
@@ -32,5 +35,5 @@ func (s *Server) Routes() {
 	} {
 		s.Router.HandleFunc(route.method, route.pattern, route.handler)
 	}
-	s.Router.NotFound = s.handleNotFound()
+	s.Router.NotFound = handlers.Static("/", cfg.Server.WebRoot, true, s.debug)
 }
